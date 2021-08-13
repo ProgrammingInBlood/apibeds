@@ -14,8 +14,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = os.path.join(BASE_DIR,'static')
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b79rkw^o@sa4gr68&q6#$j%uocc$n!j7gx&!#b@kqya%3#p+z4
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CORS_ORIGIN_ALLOW_ALL = True 
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
 ALLOWED_HOSTS = ['*']
 
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django_filters',
+    # 'django_filters',
     'django_filters',
     'Product',
     'multiselectfield',
@@ -50,19 +50,19 @@ INSTALLED_APPS = [
     'Orders',
     'MyShop',
     'Cupons',
-    #'Cart',
+    # 'Cart',
     'Shopping_Cart',
     'admin_site',
     'Comment',
     'star_ratings',
-    #'nested_admin',
+    # 'nested_admin',
     'nested_admin',
     'Test',
 
-    
-    #'rest_framework-jwt',
+
+    # 'rest_framework-jwt',
     'rest_framework_simplejwt',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -72,7 +72,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.common.CommonMiddleware',
-  
+
 
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -101,10 +101,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bedsdivan_admin.wsgi.application'
 
 
-
-
-
-
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend'
@@ -128,7 +124,7 @@ DATABASES = {
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql', 
+#         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'furnituredb',
 #         'USER': 'root',
 #         'PASSWORD': 'amitamt@1',
@@ -175,11 +171,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT='/static'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-#MEDIA_ROOT='/media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+# MEDIA_ROOT='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 102400
 
